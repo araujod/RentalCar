@@ -3,4 +3,6 @@
     <string name="managerTxt">Manager</string>
     <string name="btnAddEditCat">Add/Edit Category</string>
     <string name="btnAddEditCar">Add/Edit Car</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="login">Log In</string>
 </resources>

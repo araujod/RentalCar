@@ -1,38 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <EditText
-        android:id="@+id/txtUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="please enter your email as username"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/txtPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="please enter your password"
-        android:inputType="textPassword" />
+    tools:context=".Welcome">
 
     <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="150dp"
+        android:id="@+id/btnSignUp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:layout_marginBottom="31dp"
+        android:text="@string/SignUp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignIn"
+        app:layout_constraintStart_toStartOf="@+id/btnSignIn" />
 
     <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="150dp"
+        android:id="@+id/btnSignIn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register" />
-
-</LinearLayout>
+        android:layout_marginBottom="36dp"
+        android:text="@string/login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>

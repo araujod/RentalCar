@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         myCustomers= new MyDBConnection();
-        Button loginBtn= (Button)findViewById(R.id.btnLogin);
+        Button loginBtn= (Button)findViewById(R.id.btnSignIn);
         //existed customer , click button to login
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button registerBtn=(Button)findViewById(R.id.btnRegister);
+        Button registerBtn=(Button)findViewById(R.id.btnSignUp);
         //as new customer, click the button to register
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setDefaultData() {
 
-        CollectionReference car_customer=myCustomers.getCollectionReference("myTestANDRE2");
+        CollectionReference car_customer=myCustomers.getCollectionReference("myTestANDRE3");
 
 
         String []customerName={
