@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "46020835693",
+    "firebase_url": "https://rentalcar-4cef1.firebaseio.com",
+    "project_id": "rentalcar-4cef1",
+    "storage_bucket": "rentalcar-4cef1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46020835693:android:6dc88dbf327799a9",
+        "android_client_info": {
+          "package_name": "ca.douglas.rentalcar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "46020835693-mks171m0vngntgpgcs44u11ehiuo3o38.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.douglas.rentalcar",
+            "certificate_hash": "946122f6d63c1a468fb2b1a0694557cba820343d"
+          }
+        },
+        {
+          "client_id": "46020835693-jskbetbetagktjh2s8l9vni0nqe7lbb5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWkD_dzLQtzwKsnafnw6x-nSLHwPGzwWU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "46020835693-jskbetbetagktjh2s8l9vni0nqe7lbb5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
