@@ -2,8 +2,13 @@
   <library name="Gradle: com.android.support:versionedparcelable:28.0.0@aar">
     <CLASSES>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/baf3aadd4778f6d7c1c1c531e331b3b7/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/baf3aadd4778f6d7c1c1c531e331b3b7/jars/classes.jar!/" />
+=======
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5f57f85f70d592b4ff47436f1e40a1b3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5f57f85f70d592b4ff47436f1e40a1b3/jars/classes.jar!/" />
+>>>>>>> master
 =======
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/27db0f727f78143a6e7a1d0e8fa78910/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/27db0f727f78143a6e7a1d0e8fa78910/res" />

@@ -2,8 +2,13 @@
   <library name="Gradle: android.arch.lifecycle:livedata:1.1.1@aar">
     <CLASSES>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/feb609d269a656da46e1c295bedfc900/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/feb609d269a656da46e1c295bedfc900/res" />
+=======
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9c637e07ff3c4a7c6dd52217c6922610/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9c637e07ff3c4a7c6dd52217c6922610/res" />
+>>>>>>> master
 =======
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/026e2a791235dafb9e43a6fa7ff31996/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/026e2a791235dafb9e43a6fa7ff31996/jars/classes.jar!/" />

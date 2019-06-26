@@ -2,8 +2,13 @@
   <library name="Gradle: com.android.support.test.espresso:espresso-idling-resource:3.0.2@aar">
     <CLASSES>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/233ee0bfeab9ebbe7f5623be89f9c629/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/233ee0bfeab9ebbe7f5623be89f9c629/jars/classes.jar!/" />
+=======
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9b45109615e9bc360893984c8a76310a/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9b45109615e9bc360893984c8a76310a/jars/classes.jar!/" />
+>>>>>>> master
 =======
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a04f675fd213be5e57762ddfcb7ac363/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a04f675fd213be5e57762ddfcb7ac363/jars/classes.jar!/" />

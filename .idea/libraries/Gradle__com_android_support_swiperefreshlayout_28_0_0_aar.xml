@@ -2,11 +2,19 @@
   <library name="Gradle: com.android.support:swiperefreshlayout:28.0.0@aar">
     <ANNOTATIONS>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/779f7c13f271e5a275d74ed8294833ce/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/779f7c13f271e5a275d74ed8294833ce/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/779f7c13f271e5a275d74ed8294833ce/res" />
+=======
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1f0d115b0c2245f0b37527c997f9d71e/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1f0d115b0c2245f0b37527c997f9d71e/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1f0d115b0c2245f0b37527c997f9d71e/res" />
+>>>>>>> master
 =======
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/983e3b4c79e2b15ae2573bd9a2bcd66c/annotations.zip!/" />
     </ANNOTATIONS>

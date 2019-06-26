@@ -2,8 +2,13 @@
   <library name="Gradle: com.android.support:viewpager:28.0.0@aar">
     <CLASSES>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/721152d4b9b5dc2ea33a79eb1a64bd5f/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/721152d4b9b5dc2ea33a79eb1a64bd5f/res" />
+=======
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3558146ca1dbc4621733162ae881d69e/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3558146ca1dbc4621733162ae881d69e/res" />
+>>>>>>> master
 =======
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/91867449206b1da7f1c6371ead2c1b0c/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/91867449206b1da7f1c6371ead2c1b0c/jars/classes.jar!/" />

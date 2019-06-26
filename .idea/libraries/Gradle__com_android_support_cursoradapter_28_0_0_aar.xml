@@ -2,8 +2,13 @@
   <library name="Gradle: com.android.support:cursoradapter:28.0.0@aar">
     <CLASSES>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dd362739086513ff597d7c25501f595f/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dd362739086513ff597d7c25501f595f/res" />
+=======
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/17db80babbb7472fa89cc626d14c6a86/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/17db80babbb7472fa89cc626d14c6a86/jars/classes.jar!/" />
+>>>>>>> master
 =======
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/da57c96214ea3729bba7a61154ab1de6/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/da57c96214ea3729bba7a61154ab1de6/res" />

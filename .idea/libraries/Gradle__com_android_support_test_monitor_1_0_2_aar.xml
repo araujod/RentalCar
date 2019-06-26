@@ -2,8 +2,13 @@
   <library name="Gradle: com.android.support.test:monitor:1.0.2@aar">
     <CLASSES>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c621ddcad3f82f85b147b845b465a6e8/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c621ddcad3f82f85b147b845b465a6e8/res" />
+=======
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6a8488df72e04480f1fb635b478d3dec/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6a8488df72e04480f1fb635b478d3dec/jars/classes.jar!/" />
+>>>>>>> master
 =======
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/05383e3fd6111796a1428b5e63eb04d3/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/05383e3fd6111796a1428b5e63eb04d3/res" />
