@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setDefaultData() {
 
-        CollectionReference car_customer=myCustomers.getCollectionReference("Customer");
+        CollectionReference car_customer=myCustomers.getCollectionReference("myTest");
 
         String []id={
                 "1",
