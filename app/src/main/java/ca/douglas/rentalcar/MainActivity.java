@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setDefaultData() {
 
-        CollectionReference car_customer=myCustomers.getCollectionReference("myTestANDRE");
+        CollectionReference car_customer=myCustomers.getCollectionReference("myTestANDRE2");
 
 
         String []customerName={
@@ -111,13 +111,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // Map<String,Customer> data;
+        // Map<String,User> data;
         for (int i=0 ; i < email.length;i++) {
             // data = new HashMap<>();
-            Customer n= new Customer();
+            User n= new User();
             n.customerName=customerName[i];
-            n.eamil=email[i];
-            n.gender=gender[i];
+            n.email=email[i];
             n.phone=phone[i];
 
 
