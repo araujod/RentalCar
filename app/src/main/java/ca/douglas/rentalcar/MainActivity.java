@@ -51,20 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setDefaultData() {
 
-        CollectionReference car_customer=myCustomers.getCollectionReference("Customer");
+        CollectionReference car_customer=myCustomers.getCollectionReference("myTestANDRE");
 
-        String []id={
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10"
-        };
+
         String []customerName={
                 "Ralph Weatherhogg",
                 "Consuelo Albone",
@@ -134,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
             //data.put("Car_Customer", n);
 
-            car_customer.document(id[i]).set(n);
+            car_customer.document(email[i]).set(n);
 
 
 

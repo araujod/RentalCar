@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 public class Customer implements Serializable {
 
-    String id;
-    String customerName;
-    String eamil;
-    String phone;
-    String gender;
+   public String id;
+   public String customerName;
+    public String eamil;
+    public  String phone;
+    public String gender;
 
 }
