@@ -1,13 +1,15 @@
-package ca.douglas.rentalcar;
+package ca.douglas.rentalcar.manager;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainManager extends AppCompatActivity {
+import ca.douglas.rentalcar.R;
+
+public class AddNewCar extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_manager);
+        setContentView(R.layout.activity_add_new_car);
     }
 }

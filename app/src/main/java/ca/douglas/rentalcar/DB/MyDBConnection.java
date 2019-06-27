@@ -1,4 +1,4 @@
-package ca.douglas.rentalcar;
+package ca.douglas.rentalcar.DB;
 
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;

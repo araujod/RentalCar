@@ -1,5 +1,6 @@
 package ca.douglas.rentalcar;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,14 +8,19 @@ import android.widget.Button;
 
 import com.google.firebase.firestore.CollectionReference;
 
+import ca.douglas.rentalcar.DB.MyDBConnection;
+import ca.douglas.rentalcar.entity.User;
+import ca.douglas.rentalcar.manager.MainManager;
+
 public class MainActivity extends AppCompatActivity {
 
-    private  MyDBConnection myCustomers;
+    private MyDBConnection myCustomers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
 
@@ -25,7 +31,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //verify the customer via password and email
-                setDefaultData();
+                //setDefaultData();
+                Intent i;
+                i = new Intent(MainActivity.this, MainManager.class);
+                startActivity(i);
+
+
 
 
             }
@@ -47,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setDefaultData() {
 
-        CollectionReference car_customer=myCustomers.getCollectionReference("myTestANDRE3");
+        CollectionReference car_customer=myCustomers.getCollectionReference("myTestANDRE4");
 
 
         String []customerName={
@@ -111,9 +122,9 @@ public class MainActivity extends AppCompatActivity {
         for (int i=0 ; i < email.length;i++) {
             // data = new HashMap<>();
             User n= new User();
-            n.customerName=customerName[i];
-            n.email=email[i];
-            n.phone=phone[i];
+            n.setCustomerName(customerName[i]);
+            n.setEmail(email[i]);
+            n.setPhone(phone[i]);
 
 
             //data.put("Car_Customer", n);

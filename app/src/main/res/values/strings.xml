@@ -5,4 +5,38 @@
     <string name="btnAddEditCar">Add/Edit Car</string>
     <string name="SignUp">Sign Up</string>
     <string name="login">Log In</string>
+    <string name="txtCategory">Category</string>
+    <string name="btnAddnewCat">Add New Category</string>
+    <string name="txtSelectCatEdit">Select a Category to Edit</string>
+    <string name="btnEdit">Edit</string>
+    <string name="txtCategoryName">Category Name</string>
+    <string name="txtPriceHr">Price/Hr</string>
+    <string name="txtPriceDay">Price/Day</string>
+    <string name="txtFeatures">Features</string>
+    <string name="btnUpdateCat">Update Category</string>
+    <string name="btnDeleteCat">Delete Category</string>
+    <string name="txtEditCategory">Edit Category</string>
+    <string name="txtAddCategory">Add New Category</string>
+    <string name="btnAddCategory">Add Category</string>
+    <string name="txtCarInventory">Car Inventory</string>
+    <string name="btnAddCar">Add New Car</string>
+    <string name="txtAddNewCar">Add New Car</string>
+    <string name="txtCarModel">Model</string>
+    <string name="txtCarMaker">Make</string>
+    <string name="txtCarBrand">Brand</string>
+    <string name="txtCarYear">Year</string>
+    <string name="txtCarSeats">Seats</string>
+    <string name="txtCarMillage">Millage</string>
+    <string name="txtCarColor">Color</string>
+    <string name="txtDatePurchase">Date Purchase</string>
+    <string name="txtCarStatus">Status</string>
+
+    <string-array name="status_array">
+        <item>Waiting Arrival</item>
+        <item>Rented</item>
+        <item>Available</item>
+        <item>On Service</item>
+    </string-array>
+
+
 </resources>
