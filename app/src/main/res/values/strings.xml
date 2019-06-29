@@ -30,6 +30,17 @@
     <string name="txtCarColor">Color</string>
     <string name="txtDatePurchase">Date Purchase</string>
     <string name="txtCarStatus">Status</string>
+    <string name="txtSales">Sales</string>
+    <string name="btnCreateRent">Create a Rent</string>
+    <string name="btnFindReservation">Find Reservation</string>
+    <string name="btnReturnCar">Return a Car</string>
+    <string name="txtSelectTime">Select Duration of Rental</string>
+    <string name="txtSelectStartDate">Select Start Date/Time</string>
+    <string name="btncontinue">Continue</string>
+    <string name="txtSelectCar">Select Car</string>
+    <string name="txtSelectEndDate">Select End Date/Time</string>
+    <string name="txtStartDate">Start Date</string>
+    <string name="txtEndDate">End Date</string>
 
     <string-array name="status_array">
         <item>Waiting Arrival</item>

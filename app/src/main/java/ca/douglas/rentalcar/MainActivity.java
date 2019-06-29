@@ -11,6 +11,7 @@ import com.google.firebase.firestore.CollectionReference;
 import ca.douglas.rentalcar.DB.MyDBConnection;
 import ca.douglas.rentalcar.entity.User;
 import ca.douglas.rentalcar.manager.MainManager;
+import ca.douglas.rentalcar.sales.MainSales;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 //verify the customer via password and email
                 //setDefaultData();
                 Intent i;
-                i = new Intent(MainActivity.this, MainManager.class);
+                i = new Intent(MainActivity.this, MainSales.class);
                 startActivity(i);
 
 

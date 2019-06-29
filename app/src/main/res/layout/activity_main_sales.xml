@@ -5,16 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".manager.MainManager">
+    tools:context=".sales.MainSales">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="131dp"
+        android:layout_width="100dp"
         android:layout_height="77dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginRight="76dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/car_rental_icon" />
@@ -24,36 +23,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="124dp"
-        android:layout_marginRight="124dp"
-        android:text="@string/managerTxt"
+        android:layout_marginEnd="168dp"
+        android:layout_marginRight="168dp"
+        android:text="@string/txtSales"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnAddEditCategory"
+        android:id="@+id/btnFindReservation"
         android:layout_width="212dp"
         android:layout_height="103dp"
-        android:layout_marginTop="132dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:text="@string/btnAddEditCat"
+        android:layout_marginTop="46dp"
+        android:text="@string/btnFindReservation"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCreatRent" />
 
     <Button
-        android:id="@+id/btnAddEditCar"
-        android:layout_width="225dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="86dp"
-        android:layout_marginEnd="87dp"
-        android:layout_marginRight="87dp"
-        android:text="@string/btnAddEditCar"
+        android:id="@+id/btnCreatRent"
+        android:layout_width="212dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:text="@string/btnCreateRent"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddEditCategory" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/btnReturn"
+        android:layout_width="225dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginRight="86dp"
+        android:text="@string/btnReturnCar"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFindReservation" />
 </android.support.constraint.ConstraintLayout>
