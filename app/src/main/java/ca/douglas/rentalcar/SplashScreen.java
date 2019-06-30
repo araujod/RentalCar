@@ -16,12 +16,12 @@ public class SplashScreen extends AppCompatActivity {
         else
             i = new Intent(this, Welcome.class);
 */
-        try {
+        /*try {
             Thread.sleep(5000);
         }
         catch(Exception e){
 
-        }
+        }*/
         i = new Intent(this, MainActivity.class);
         startActivity(i);
         finish();

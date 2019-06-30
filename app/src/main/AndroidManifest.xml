@@ -11,27 +11,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".sales.SelectCar"></activity>
-        <activity android:name=".sales.SelectTime" />
-        <activity android:name=".sales.MainSales" />
         <activity android:name=".manager.AddNewCar" />
         <activity android:name=".manager.CarOption" />
         <activity android:name=".manager.AddCategory" />
         <activity android:name=".manager.EditCategory" />
         <activity android:name=".manager.CategoryOption" />
         <activity android:name=".manager.MainManager" />
+        <activity android:name=".sales.MainSales" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".sales.SelectCar" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".sales.SelectTime" android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/SplashTheme" />
+            android:theme="@style/AppTheme.NoActionBar"
+             />
     </application>
 
 </manifest>

@@ -22,9 +22,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
         myCustomers= new MyDBConnection();
         Button loginBtn= (Button)findViewById(R.id.btnSignIn);
         //existed customer , click button to login
@@ -36,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent i;
                 i = new Intent(MainActivity.this, MainSales.class);
                 startActivity(i);
-
-
-
 
             }
         });

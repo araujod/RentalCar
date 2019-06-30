@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/white"
     tools:context=".sales.MainSales">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="77dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,46 +22,71 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="168dp"
-        android:layout_marginRight="168dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginRight="92dp"
         android:text="@string/txtSales"
-        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnFindReservation"
-        android:layout_width="212dp"
-        android:layout_height="103dp"
-        android:layout_marginTop="46dp"
         android:text="@string/btnFindReservation"
-        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/btnCreatRent"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCreatRent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/app_margin"
+        android:layout_marginLeft="@dimen/app_margin"
+        android:layout_marginEnd="@dimen/app_margin"
+        android:layout_marginRight="@dimen/app_margin"
+        android:layout_marginTop="40dp"
+        android:theme="@style/AppTheme.Button"
+        />
 
     <Button
         android:id="@+id/btnCreatRent"
-        android:layout_width="212dp"
-        android:layout_height="103dp"
-        android:layout_marginTop="87dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
         android:text="@string/btnCreateRent"
-        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/app_margin"
+        android:layout_marginLeft="@dimen/app_margin"
+        android:layout_marginEnd="@dimen/app_margin"
+        android:layout_marginRight="@dimen/app_margin"
+        android:layout_marginTop="80dp"
+        android:theme="@style/AppTheme.Button"
+        />
 
     <Button
         android:id="@+id/btnReturn"
-        android:layout_width="225dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="86dp"
-        android:layout_marginRight="86dp"
         android:text="@string/btnReturnCar"
-        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/btnFindReservation"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFindReservation" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/app_margin"
+        android:layout_marginLeft="@dimen/app_margin"
+        android:layout_marginEnd="@dimen/app_margin"
+        android:layout_marginRight="@dimen/app_margin"
+        android:layout_marginTop="40dp"
+        android:theme="@style/AppTheme.Button"/>
+
 </android.support.constraint.ConstraintLayout>
