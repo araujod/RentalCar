@@ -29,7 +29,7 @@
     <string name="txtCarSeats">Seats</string>
     <string name="txtCarMillage">Millage</string>
     <string name="txtCarColor">Color</string>
-    <string name="txtDatePurchase">Date Purchase</string>
+    <string name="txtDatePurchase">Purchase Date</string>
     <string name="txtCarStatus">Status</string>
     <string name="txtSales">Sales</string>
     <string name="btnCreateRent">Create a Rent</string>
@@ -60,6 +60,12 @@
         <item>Rented</item>
         <item>Available</item>
         <item>On Service</item>
+    </string-array>
+
+    <string-array name="category_array">
+        <item>Sedan</item>
+        <item>Compact</item>
+        <item>PickUp</item>
     </string-array>
 
 
