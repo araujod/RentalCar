@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 //verify the customer via password and email
                 //setDefaultData();
                 Intent i;
-                i = new Intent(MainActivity.this, MainManager.class);
+                i = new Intent(MainActivity.this, MainSales.class);
                 startActivity(i);
 
             }
