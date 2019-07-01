@@ -17,12 +17,22 @@ public class MainSales extends AppCompatActivity {
         setContentView(R.layout.activity_main_sales);
 
         Button btnCreateRent = (Button)findViewById(R.id.btnCreatRent);
+        Button btnFindReservation = (Button)findViewById(R.id.btnFindReservation);
 
         btnCreateRent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i;
                 i = new Intent(MainSales.this, SelectTime.class);
+                startActivity(i);
+            }
+        });
+
+        btnFindReservation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i;
+                i = new Intent(MainSales.this, FindReservation.class);
                 startActivity(i);
             }
         });

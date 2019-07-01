@@ -54,6 +54,17 @@
     <string name="txtDriverLicense">Driver License</string>
     <string name="btnUpdateInformation">Update Information</string>
     <string name="imgCar">Car</string>
+    <string name="txtFindReservation">Find Reservation</string>
+    <string name="txtReservationNum">Reservation #</string>
+    <string name="btnSearch">Search</string>
+    <string name="txtDriverName">Driver Name</string>
+    <string name="txtTotal">Total</string>
+    <string name="txtSafetyDeposit">Safety Deposit</string>
+    <string name="txtDeposit">Deposit</string>
+    <string name="txtPrice">Price</string>
+    <string name="btnReserve">Reserve</string>
+    <string name="txtTotalSummary">Total Summary</string>
+
 
     <string-array name="status_array">
         <item>Waiting Arrival</item>
