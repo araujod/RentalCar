@@ -3,6 +3,8 @@ package ca.douglas.rentalcar.sales;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import ca.douglas.rentalcar.R;
@@ -29,6 +31,22 @@ public class SelectCar extends AppCompatActivity {
         getStartTime.setText(intent.getStringExtra("StartTime"));
         getEndDate.setText(intent.getStringExtra("EndDate"));
         getEndTime.setText(intent.getStringExtra("EndTime"));
+
+
+        Button btnContinue = findViewById(R.id.btnContinue2);
+
+        btnContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i;
+                i = new Intent(SelectCar.this, DriverInfo.class);
+                i.putExtra("StartDate", getStartDate.getText().toString());
+                i.putExtra("StartTime", getStartTime.getText().toString());
+                i.putExtra("EndDate", getEndDate.getText().toString());
+                i.putExtra("EndTime", getEndTime.getText().toString());
+                startActivity(i);
+            }
+        });
 
     }
 }

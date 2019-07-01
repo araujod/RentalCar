@@ -13,8 +13,11 @@ import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Timer;
 
 import ca.douglas.rentalcar.MainActivity;
@@ -30,6 +33,10 @@ public class SelectTime extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener mEndDateSetListener;
     private TimePickerDialog.OnTimeSetListener mStartTimeSetListener;
     private TimePickerDialog.OnTimeSetListener mEndTimeSetListener;
+    Boolean checkStartDate = false;
+    Boolean checkStartTime = false;
+    Boolean checkEndDate = false;
+    Boolean checkEndTime = false;
 
 
     @Override
@@ -70,6 +77,7 @@ public class SelectTime extends AppCompatActivity {
 
                 String date = month +"/" + day +"/" + year;
                 mStartDate.setText(date);
+                checkStartDate =true;
 
             }
         };
@@ -94,6 +102,7 @@ public class SelectTime extends AppCompatActivity {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 mStartTime.setText(String.format("%02d:%02d", hourOfDay, minute));
+                checkStartTime = true;
 
             }
         };
@@ -124,6 +133,7 @@ public class SelectTime extends AppCompatActivity {
 
                 String date = month +"/" + day +"/" + year;
                 mEndDate.setText(date);
+                checkEndDate = true;
 
             }
         };
@@ -148,6 +158,7 @@ public class SelectTime extends AppCompatActivity {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 mEndTime.setText(String.format("%02d:%02d", hourOfDay, minute));
+                checkEndTime =true;
 
             }
         };
@@ -156,14 +167,67 @@ public class SelectTime extends AppCompatActivity {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i;
-                i = new Intent(SelectTime.this, SelectCar.class);
-                i.putExtra("StartDate", mStartDate.getText().toString());
-                i.putExtra("StartTime", mStartTime.getText().toString());
-                i.putExtra("EndDate", mEndDate.getText().toString());
-                i.putExtra("EndTime", mEndTime.getText().toString());
-                startActivity(i);
+
+                if(!checkStartDate || !checkStartTime || !checkEndDate || !checkEndTime){
+                    Toast.makeText(SelectTime.this,
+                            "Please Select Date/Time!", Toast.LENGTH_LONG).show();
+                }
+
+                else if(!isDateAfter(mStartDate.getText().toString(),mEndDate.getText().toString())){
+                }
+
+                else{
+                    Intent i;
+                    i = new Intent(SelectTime.this, SelectCar.class);
+                    i.putExtra("StartDate", mStartDate.getText().toString());
+                    i.putExtra("StartTime", mStartTime.getText().toString());
+                    i.putExtra("EndDate", mEndDate.getText().toString());
+                    i.putExtra("EndTime", mEndTime.getText().toString());
+                    startActivity(i);
+                }
             }
         });
+
+
+    }
+
+    public  boolean isDateAfter(String startDate,String endDate)
+    {
+        try
+        {
+            String myFormatString = "MM/dd/yyyy"; // for example
+            SimpleDateFormat df = new SimpleDateFormat(myFormatString);
+            Date date1 = df.parse(endDate);
+            Date startingDate = df.parse(startDate);
+            Calendar cal = Calendar.getInstance();
+            int year = cal.get(Calendar.YEAR);
+            int month = cal.get(Calendar.MONTH);
+            month = month +1;
+            int day = cal.get(Calendar.DAY_OF_MONTH);
+            String date = month +"/" + day +"/" + year;
+            Date currentDate = df.parse(date);
+            Boolean check = false;
+
+            if (date1.after(startingDate))
+                check= true;
+            else {
+                check = false;
+                Toast.makeText(SelectTime.this,
+                        "Your End Date Must Be After Start Date!", Toast.LENGTH_LONG).show();
+            }
+
+            if(startingDate.before(currentDate)){
+                check = false;
+                Toast.makeText(SelectTime.this,
+                        "Your Start Date Must Be After Today's date!", Toast.LENGTH_LONG).show();
+            }
+
+            return check;
+        }
+        catch (Exception e)
+        {
+
+            return false;
+        }
     }
 }

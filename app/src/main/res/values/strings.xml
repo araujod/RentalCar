@@ -42,6 +42,18 @@
     <string name="txtSelectEndDate">Select End Date/Time</string>
     <string name="txtStartDate">Start Date</string>
     <string name="txtEndDate">End Date</string>
+    <string name="txtRentalSummary">Rental Summary</string>
+    <string name="txtDriverInfo">Driver Information</string>
+    <string name="txtSearchDrive">Search Driver</string>
+    <string name="txtSearch">Search</string>
+    <string name="btnCreateUser">Create New User</string>
+    <string name="txtName">Name</string>
+    <string name="txtEmail">Email</string>
+    <string name="txtPhone">Phone</string>
+    <string name="txtAddress">Address</string>
+    <string name="txtDriverLicense">Driver License</string>
+    <string name="btnUpdateInformation">Update Information</string>
+    <string name="imgCar">Car</string>
 
     <string-array name="status_array">
         <item>Waiting Arrival</item>
