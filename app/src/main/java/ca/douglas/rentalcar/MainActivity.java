@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 //verify the customer via password and email
                 //setDefaultData();
                 Intent i;
-                i = new Intent(MainActivity.this, MainSales.class);
+                i = new Intent(MainActivity.this, LogIn.class);
                 startActivity(i);
 
             }
@@ -43,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //create new customer
-                //TESTE UPLOAD
+                Intent i;
+                i = new Intent(MainActivity.this, SignUp.class);
+                startActivity(i);
 
             }
         });
