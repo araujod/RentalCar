@@ -1,255 +1,269 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/colorPrimary"
     tools:context=".manager.EditCategory">
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="156dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginLeft="127dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginRight="128dp"
+        android:text="@string/txtAddNewCar"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txtAddNewCar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txtAddNewCar"
-            android:layout_marginTop="24dp"
-            android:textColor="@android:color/black"
-            android:textSize="50sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="51dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/txtCarBrand"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-        <Spinner
-            android:id="@+id/spinnerCategory"
-            android:spinnerMode="dialog"
-            android:prompt="@string/txtCategory"
-            android:layout_width="match_parent"
-            android:layout_height="40sp"
-            android:layout_marginStart="@dimen/app_margin"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="@dimen/app_margin"
-            android:layout_marginRight="64dp"
-            android:textSize="20sp"
-            android:entries="@array/category_array"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtAddNewCar" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="132dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="29dp"
+        android:text="@string/txtCategoryName"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/tiBrand"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/app_margin"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="@dimen/app_margin"
-            android:layout_marginRight="64dp"
-            app:errorEnabled="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerCategory">
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="66dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/txtCarModel"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-            <EditText
-                android:id="@+id/addBrand"
-                android:hint="@string/txtCarBrand"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:theme="@style/AppTheme.EditText"
-                tools:ignore="Autofill" />
-        </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="58dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/txtCarYear"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/tiModel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/app_margin"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="@dimen/app_margin"
-            android:layout_marginRight="64dp"
-            app:errorEnabled="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiBrand">
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="60dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/txtCarSeats"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-            <EditText
-                android:id="@+id/addModel"
-                android:hint="@string/txtCarModel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:theme="@style/AppTheme.EditText"
-                tools:ignore="Autofill" />
-        </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="63dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/txtCarMillage"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/tiYear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/app_margin"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="@dimen/app_margin"
-            android:layout_marginRight="64dp"
-            app:errorEnabled="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiModel">
-            <EditText
-                android:id="@+id/addYear"
-                android:hint="@string/txtCarYear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:ems="10"
-                android:inputType="number"
-                android:theme="@style/AppTheme.EditText"
-                tools:ignore="Autofill" />
-        </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="59dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/txtCarColor"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/tiSeats"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/app_margin"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="@dimen/app_margin"
-            android:layout_marginRight="64dp"
-            app:errorEnabled="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiYear">
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="120dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/txtDatePurchase"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-            <EditText
-                android:id="@+id/addSeats"
-                android:hint="@string/txtCarSeats"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:ems="10"
-                android:inputType="number"
-                android:theme="@style/AppTheme.EditText"
-                tools:ignore="Autofill" />
-        </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="64dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/txtCarStatus"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/tiMillage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/app_margin"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="@dimen/app_margin"
-            android:layout_marginRight="64dp"
-            app:errorEnabled="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiSeats">
-            <EditText
-                android:id="@+id/addMillage"
-                android:hint="@string/txtCarMillage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:ems="10"
-                android:inputType="numberDecimal"
-                android:theme="@style/AppTheme.EditText"
-                tools:ignore="Autofill" />
-        </android.support.design.widget.TextInputLayout>
+    <EditText
+        android:id="@+id/addBrand"
+        android:layout_width="202dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCategory"
+        tools:ignore="Autofill" />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/tiColor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/app_margin"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="@dimen/app_margin"
-            android:layout_marginRight="64dp"
-            app:errorEnabled="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiMillage">
-            <EditText
-                android:id="@+id/addColor"
-                android:hint="@string/txtCarColor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:theme="@style/AppTheme.EditText"
-                tools:ignore="Autofill"/>
-        </android.support.design.widget.TextInputLayout>
+    <EditText
+        android:id="@+id/addModel"
+        android:layout_width="195dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addBrand"
+        tools:ignore="Autofill" />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/tiPurchaseDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/app_margin"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="@dimen/app_margin"
-            android:layout_marginRight="64dp"
-            app:errorEnabled="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiColor">
-            <EditText
-                android:id="@+id/addPurchaseDate"
-                android:hint="@string/txtDatePurchase"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:ems="10"
-                android:inputType="date"
-                android:theme="@style/AppTheme.EditText"
-                tools:ignore="Autofill"/>
-        </android.support.design.widget.TextInputLayout>
+    <EditText
+        android:id="@+id/addSeats"
+        android:layout_width="196dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addYear"
+        tools:ignore="Autofill" />
 
-        <Spinner
-            android:id="@+id/spinnerStatus"
-            android:layout_width="match_parent"
-            android:layout_height="40sp"
-            android:layout_marginStart="@dimen/app_margin"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="@dimen/app_margin"
-            android:layout_marginRight="64dp"
-            android:textSize="20sp"
-            android:entries="@array/status_array"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiPurchaseDate" />
+    <EditText
+        android:id="@+id/addMillage"
+        android:layout_width="197dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:inputType="textPersonName|numberDecimal"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addSeats"
+        tools:ignore="Autofill" />
 
-        <Button
-            android:id="@+id/btnAddCat"
-            android:text="@string/btnAddCategory"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/app_margin"
-            android:layout_marginLeft="@dimen/app_margin"
-            android:layout_marginEnd="@dimen/app_margin"
-            android:layout_marginRight="@dimen/app_margin"
-            android:layout_marginTop="40dp"
-            android:theme="@style/AppTheme.Button"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerStatus" />
+    <EditText
+        android:id="@+id/addColor"
+        android:layout_width="199dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addMillage"
+        tools:ignore="Autofill" />
 
-    </android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/addFeatures4"
+        android:layout_width="208dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:ems="10"
+        android:hint="mm/dd/yyyy"
+        android:inputType="date"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addColor"
+        tools:ignore="Autofill" />
 
+    <EditText
+        android:id="@+id/addYear"
+        android:layout_width="196dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginRight="34dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addModel"
+        tools:ignore="Autofill" />
 
-</ScrollView>
+    <Button
+        android:id="@+id/btnAddCat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="142dp"
+        android:layout_marginLeft="142dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginRight="142dp"
+        android:text="@string/btnAddCategory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerStatus" />
+
+    <Spinner
+        android:id="@+id/spinnerCategory"
+        android:layout_width="195dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <Spinner
+        android:id="@+id/spinnerStatus"
+        android:layout_width="195dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
+        android:entries="@array/status_array"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addFeatures4" />
+
+</android.support.constraint.ConstraintLayout>
