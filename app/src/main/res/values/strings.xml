@@ -54,7 +54,7 @@
     <string name="txtDriverLicense">Driver License</string>
     <string name="btnUpdateInformation">Update Information</string>
     <string name="imgCar">Car</string>
-<<<<<<< HEAD
+
     <string name="txtFindReservation">Find Reservation</string>
     <string name="txtReservationNum">Reservation #</string>
     <string name="btnSearch">Search</string>
@@ -66,7 +66,6 @@
     <string name="btnReserve">Reserve</string>
     <string name="txtTotalSummary">Total Summary</string>
 
-=======
     <string name="txtSignUpUserid">Username:</string>
     <string name="txtSignUpName">Name:</string>
     <string name="txtSignUpTitle2">Sign Up</string>
@@ -79,7 +78,7 @@
     <string name="txtSignUpConfPwd">Confirm:</string>
     <string name="btnUpdate">Update Data</string>
     <string name="btnLogIn">Log In</string>
->>>>>>> master
+
 
     <string-array name="status_array">
         <item>Waiting Arrival</item>
