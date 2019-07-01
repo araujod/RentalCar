@@ -11,13 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-        <activity android:name=".sales.DriverInfo"></activity>
-        <activity android:name=".sales.SummaryRent" />
-        <activity android:name=".manager.AddNewCar" />
-=======
-        <activity android:name=".manager.AddNewCar" android:theme="@style/AppTheme.NoActionBar" />
->>>>>>> master
+
+        <activity android:name=".sales.DriverInfo" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".sales.SummaryRent" android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".manager.AddNewCar" android:theme="@style/AppTheme.NoActionBar"/>
+
         <activity android:name=".manager.CarOption" />
         <activity android:name=".manager.AddCategory" />
         <activity android:name=".manager.EditCategory" />
