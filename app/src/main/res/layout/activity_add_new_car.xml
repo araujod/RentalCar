@@ -42,7 +42,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtAddNewCar" />
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/tiBrand"
+            android:id="@+id/tiMaker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/app_margin"
@@ -56,7 +56,7 @@
             app:layout_constraintTop_toBottomOf="@+id/spinnerCategory">
 
             <EditText
-                android:id="@+id/addBrand"
+                android:id="@+id/addMaker"
                 android:hint="@string/txtCarBrand"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiBrand">
+            app:layout_constraintTop_toBottomOf="@+id/tiMaker">
 
             <EditText
                 android:id="@+id/addModel"
@@ -128,18 +128,19 @@
             android:layout_marginEnd="@dimen/app_margin"
             android:layout_marginRight="64dp"
             app:errorEnabled="true"
+            app:hintTextAppearance="@style/txtLicensePlate"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tiYear">
 
             <EditText
                 android:id="@+id/addSeats"
-                android:hint="@string/txtCarSeats"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
                 android:ems="10"
+                android:hint="@string/txtCarSeats"
                 android:inputType="number"
+                android:textSize="20dp"
                 android:theme="@style/AppTheme.EditText"
                 tools:ignore="Autofill" />
         </android.support.design.widget.TextInputLayout>
@@ -182,16 +183,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tiMillage">
+
             <EditText
                 android:id="@+id/addColor"
-                android:hint="@string/txtCarColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
                 android:ems="10"
+                android:hint="@string/txtCarColor"
                 android:inputType="textPersonName"
+                android:textSize="20dp"
                 android:theme="@style/AppTheme.EditText"
-                tools:ignore="Autofill"/>
+                tools:ignore="Autofill" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -219,6 +221,36 @@
                 tools:ignore="Autofill"/>
         </android.support.design.widget.TextInputLayout>
 
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tiLicensePlate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/app_margin"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/app_margin"
+            android:layout_marginRight="64dp"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tiPurchaseDate">
+
+            <EditText
+                android:id="@+id/addLicensePlate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/txtLicensePlate"
+                android:inputType="date"
+                android:textSize="20dp"
+                android:theme="@style/AppTheme.EditText"
+                tools:ignore="Autofill" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
         <Spinner
             android:id="@+id/spinnerStatus"
             android:layout_width="match_parent"
@@ -231,22 +263,22 @@
             android:textSize="20sp"
             android:entries="@array/status_array"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiPurchaseDate" />
+            app:layout_constraintTop_toBottomOf="@+id/tiLicensePlate" />
 
         <Button
-            android:id="@+id/btnAddCat"
-            android:text="@string/btnAddCategory"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:id="@+id/btnAddCar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/app_margin"
             android:layout_marginLeft="@dimen/app_margin"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="@dimen/app_margin"
             android:layout_marginRight="@dimen/app_margin"
-            android:layout_marginTop="40dp"
+            android:text="@string/btnAddCar"
             android:theme="@style/AppTheme.Button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinnerStatus" />
 
     </android.support.constraint.ConstraintLayout>

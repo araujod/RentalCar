@@ -57,6 +57,7 @@ public class AddCategory extends AppCompatActivity {
 
         name = findViewById(R.id.addCatName);
         priceHr = findViewById(R.id.addPriceHr);
+
         priceDay = findViewById(R.id.addPriceDay);
         feature = findViewById(R.id.addFeatures);
         btnAdd = findViewById(R.id.btnAddCat);
@@ -96,7 +97,7 @@ public class AddCategory extends AppCompatActivity {
                         i = new Intent(AddCategory.this, MainManager.class);
                         startActivity(i);
                     }
-                }, 5000);
+                }, 3000);
 
 
             }

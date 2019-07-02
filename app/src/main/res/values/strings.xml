@@ -24,7 +24,7 @@
     <string name="txtAddNewCar">Add New Car</string>
     <string name="txtCarModel">Model</string>
     <string name="txtCarMaker">Make</string>
-    <string name="txtCarBrand">Brand</string>
+    <string name="txtCarBrand">Maker</string>
     <string name="txtCarYear">Year</string>
     <string name="txtCarSeats">Seats</string>
     <string name="txtCarMillage">Millage</string>
@@ -88,6 +88,7 @@
     <string name="txtUpdConfPwd">Confirm:</string>
     <string name="btnUpdate">Update Data</string>
     <string name="btnLogIn">Log In</string>
+    <string name="txtLicensePlate">License Plate</string>
 
     <string-array name="status_array">
         <item>Waiting Arrival</item>

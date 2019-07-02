@@ -73,4 +73,6 @@
     <style name="AppTheme.TextView">
         <item name="android:drawablePadding">10dp</item>
     </style>
+
+    <style name="txtLicensePlate">License Plate</style>
 </resources>

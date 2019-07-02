@@ -25,6 +25,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import ca.douglas.rentalcar.R;
 import ca.douglas.rentalcar.entity.Category;
@@ -91,13 +93,14 @@ public class EditCategory extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                cName = mCatFeature.getText().toString();
+                cName = mCatName.getText().toString();
                 cPriceHr = mCatPriceHr.getText().toString();
                 cPriceDay = mCatPriceDay.getText().toString();
                 cFeature = mCatFeature.getText().toString();
 
                 myCategory = new Category();
 
+                myCategory.setId(CID);
                 myCategory.setName(cName);
                 myCategory.setPriceHr(cPriceHr);
                 myCategory.setPriceDay(cPriceDay);
@@ -105,8 +108,6 @@ public class EditCategory extends AppCompatActivity {
 
 
                 UpdateCategory(myCategory);
-
-
 
             }
         });
@@ -121,11 +122,7 @@ public class EditCategory extends AppCompatActivity {
             }
         });
 
-
-
-
     }
-
 
     public void UpdateCategory(Category myCategory) {
 
@@ -143,6 +140,14 @@ public class EditCategory extends AppCompatActivity {
 
             Toast.makeText(EditCategory.this,
                     "Category Edited Successfully", Toast.LENGTH_LONG).show();
+            new Timer().schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    Intent i;
+                    i = new Intent(EditCategory.this, MainManager.class);
+                    startActivity(i);
+                }
+            }, 2000);
 
 
         }
@@ -156,19 +161,19 @@ public class EditCategory extends AppCompatActivity {
 
         try{
 
-//            Map<String, Object> category = new HashMap<>();
-//
-//            category.put(key[0], myCategory.getId());
-//            category.put(key[1], myCategory.getName());
-//            category.put(key[2], myCategory.getPriceHr());
-//            category.put(key[3], myCategory.getPriceDay());
-//            category.put(key[4], myCategory.getFeature());
-
             db.collection(COLLECTION_NAME).document(CID_).delete();
 
             Toast.makeText(EditCategory.this,
                     "Category Edited Successfully", Toast.LENGTH_LONG).show();
 
+            new Timer().schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    Intent i;
+                    i = new Intent(EditCategory.this, MainManager.class);
+                    startActivity(i);
+                }
+            }, 2000);
 
         }
 
@@ -176,6 +181,5 @@ public class EditCategory extends AppCompatActivity {
             throw new RuntimeException(e);
         }
     }
-
 
 }
