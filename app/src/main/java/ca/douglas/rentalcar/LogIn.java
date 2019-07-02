@@ -86,7 +86,14 @@ public class LogIn extends AppCompatActivity {
             }
         });
 
+<<<<<<< HEAD
         Button b1 = (Button) findViewById(R.id.btnUpdate);
+=======
+
+
+
+        Button b1 = (Button) findViewById(R.id.btnLogIn);
+>>>>>>> master
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,9 +138,16 @@ public class LogIn extends AppCompatActivity {
                     }
 
                     //Verify if email already exists
+<<<<<<< HEAD
                     myMainUser.Search(customerEmail);
 
                     myUser = myMainUser.myUser;
+=======
+
+                    //myUser = myMainUser.Search(customerEmail);
+
+
+>>>>>>> master
 
                     if (myUser.getCustomerName() != null){
 

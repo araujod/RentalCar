@@ -157,6 +157,7 @@
         android:layout_marginEnd="142dp"
         android:layout_marginRight="142dp"
         android:text="@string/btnAddCategory"
+        android:theme="@style/AppTheme.Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addFeatures" />

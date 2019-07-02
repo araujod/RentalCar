@@ -1,6 +1,7 @@
 package ca.douglas.rentalcar;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -42,6 +45,8 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        // Initialize Firebase Auth
+
 
         final EditText cName = (EditText) findViewById(R.id.editSignUpName);
         final EditText cEmail = (EditText) findViewById(R.id.editSignUpEmail);
@@ -115,7 +120,12 @@ public class SignUp extends AppCompatActivity {
                     myMainUser = new MainUser();
 
                     //Verify if email already exists
+<<<<<<< HEAD
                     myMainUser.Search(customerEmail);
+=======
+                    myUser = myMainUser.Search(customerEmail);
+
+>>>>>>> master
                     if (myUser.getCustomerName() == null){
 
                         //create new user
@@ -132,7 +142,8 @@ public class SignUp extends AppCompatActivity {
                         myUser.setPwd(customerPwd);
                         myUser.setType(getCustomerAccess);
 
-                        //add usee to database
+
+                        //add user to database
                         myMainUser.AddData(myUser);
 
                         Toast.makeText(SignUp.this, "Welcome to Rental Car, " + myUser.getCustomerName() +
@@ -140,7 +151,7 @@ public class SignUp extends AppCompatActivity {
 
                         //open Customer Activity
                         Intent i;
-                        i = new Intent(SignUp.this, MainSales.class);
+                        i = new Intent(SignUp.this, MainActivity.class);
                         startActivity(i);
 
                     } else {

@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //create new customer
                 Intent i;
-                i = new Intent(MainActivity.this, SignUp.class);
+                i = new Intent(MainActivity.this, MainManager.class);
                 startActivity(i);
             }
         });
