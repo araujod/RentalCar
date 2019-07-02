@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
@@ -22,6 +23,7 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import ca.douglas.rentalcar.DB.MyDBConnection;
 import ca.douglas.rentalcar.R;
 import ca.douglas.rentalcar.entity.Category;
 import ca.douglas.rentalcar.entity.User;
@@ -40,6 +42,7 @@ public class AddCategory extends AppCompatActivity {
     private EditText feature;
     Button btnAdd;
     Category myCategory;
+    private MyDBConnection dbc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +111,7 @@ public class AddCategory extends AppCompatActivity {
     public void AddCategory(Category myCategory) {
 
         try{
+            dbc = new MyDBConnection();
 
             Map<String, Object> category = new HashMap<>();
 
@@ -117,25 +121,11 @@ public class AddCategory extends AppCompatActivity {
             category.put(key[3], myCategory.getPriceDay());
             category.put(key[4], myCategory.getFeature());
 
+            CollectionReference categories = dbc.getCollectionReference("Category");
+            categories.document(myCategory.getId()).set(category);
 
-            // Add a new document with a generated ID
-            db.collection(COLLECTION_NAME)
-                    .add(category)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Toast.makeText(AddCategory.this,
-                                    "Category Add Successfully", Toast.LENGTH_LONG).show();
-                            Log.d(TAG,
-                                    "DocumentSnapshot added with ID: " + documentReference.getId());
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(Exception e) {
-                            Log.d(TAG,
-                                    "Error adding document " + e);
-                        }});
+            Toast.makeText(AddCategory.this,
+                    "Category Add Successfully", Toast.LENGTH_LONG).show();
         }
 
         catch (Exception e) {

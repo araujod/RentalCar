@@ -112,6 +112,16 @@ public class EditCategory extends AppCompatActivity {
         });
 
 
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                DeleteCategory(CID);
+
+            }
+        });
+
+
 
 
     }
@@ -130,6 +140,34 @@ public class EditCategory extends AppCompatActivity {
             category.put(key[4], myCategory.getFeature());
 
             db.collection(COLLECTION_NAME).document(CID).update(category);
+
+            Toast.makeText(EditCategory.this,
+                    "Category Edited Successfully", Toast.LENGTH_LONG).show();
+
+
+        }
+
+        catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void DeleteCategory(String CID_) {
+
+        try{
+
+//            Map<String, Object> category = new HashMap<>();
+//
+//            category.put(key[0], myCategory.getId());
+//            category.put(key[1], myCategory.getName());
+//            category.put(key[2], myCategory.getPriceHr());
+//            category.put(key[3], myCategory.getPriceDay());
+//            category.put(key[4], myCategory.getFeature());
+
+            db.collection(COLLECTION_NAME).document(CID_).delete();
+
+            Toast.makeText(EditCategory.this,
+                    "Category Edited Successfully", Toast.LENGTH_LONG).show();
 
 
         }

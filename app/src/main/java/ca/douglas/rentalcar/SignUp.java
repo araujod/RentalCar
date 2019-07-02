@@ -120,12 +120,12 @@ public class SignUp extends AppCompatActivity {
                     myMainUser = new MainUser();
 
                     //Verify if email already exists
-<<<<<<< HEAD
-                    myMainUser.Search(customerEmail);
-=======
-                    myUser = myMainUser.Search(customerEmail);
 
->>>>>>> master
+                    myMainUser.Search(customerEmail);
+
+                    //myUser = myMainUser.Search(customerEmail);
+
+
                     if (myUser.getCustomerName() == null){
 
                         //create new user

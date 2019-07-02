@@ -34,16 +34,11 @@ public class MainUser {
 
     private FirebaseFirestore db;
     private final String COLLECTION_NAME = "Users";
-<<<<<<< HEAD
     private final String TAG = "MainUser" ;
     private final String []key = {"email","name","id","phone", "type","address","license","password"};
     public User myUser;
     private MyDBConnection dbc;
-=======
-    private final String TAG = "SignUp" ;
-    private final String []key = {"id","name","email","phone", "type","address","license","password"};
-    User myUser;
->>>>>>> master
+
 
     public MainUser(){
         initialize();
