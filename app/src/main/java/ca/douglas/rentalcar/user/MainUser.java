@@ -26,7 +26,7 @@ import ca.douglas.rentalcar.entity.User;
 public class MainUser {
 
     private FirebaseFirestore db;
-    private final String COLLECTION_NAME = "myTestAlexandre01";
+    private final String COLLECTION_NAME = "Users";
     private final String TAG = "SignUp" ;
     private final String []key = {"id","name","email","phone", "type","address","license","password"};
     User myUser;

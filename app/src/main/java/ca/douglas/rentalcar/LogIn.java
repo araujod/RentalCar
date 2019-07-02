@@ -43,7 +43,7 @@ import ca.douglas.rentalcar.user.MainUser;
 public class LogIn extends AppCompatActivity {
 
     private FirebaseFirestore db;
-    private final String COLLECTION_NAME = "myTestAlexandre01";
+    private final String COLLECTION_NAME = "Users";
     private final String TAG = "LogIn" ;
     private final String []key = {"id","name","email","phone", "type","address","license","password"};
 
@@ -87,6 +87,9 @@ public class LogIn extends AppCompatActivity {
             }
         });
 
+
+
+
         Button b1 = (Button) findViewById(R.id.btnLogIn);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,7 +115,10 @@ public class LogIn extends AppCompatActivity {
 
 
                     //Verify if email already exists
-                    myUser = myMainUser.Search(customerEmail);
+
+                    //myUser = myMainUser.Search(customerEmail);
+
+
 
                     if (myUser.getCustomerName() != null){
 
