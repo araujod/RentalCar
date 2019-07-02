@@ -8,10 +8,13 @@ import android.widget.Button;
 
 import com.google.firebase.firestore.CollectionReference;
 
+import java.security.NoSuchAlgorithmException;
+
 import ca.douglas.rentalcar.DB.MyDBConnection;
 import ca.douglas.rentalcar.entity.User;
 import ca.douglas.rentalcar.manager.MainManager;
 import ca.douglas.rentalcar.sales.MainSales;
+import ca.douglas.rentalcar.user.MainUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,14 +25,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        myCustomers= new MyDBConnection();
+        myCustomers = new MyDBConnection();
+
+        //to create managers and salesmen
+        //setDefaultData();
+
         Button loginBtn= (Button)findViewById(R.id.btnSignIn);
         //existed customer , click button to login
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //verify the customer via password and email
-                //setDefaultData();
                 Intent i;
                 i = new Intent(MainActivity.this, LogIn.class);
                 startActivity(i);
@@ -46,93 +52,66 @@ public class MainActivity extends AppCompatActivity {
                 Intent i;
                 i = new Intent(MainActivity.this, SignUp.class);
                 startActivity(i);
-
             }
         });
 
     }
 
-
-
     private void setDefaultData() {
 
-        CollectionReference car_customer=myCustomers.getCollectionReference("myTestANDRE4");
+        // e-mail should be name + "@gmail.com";
+        // Address should be 3 last phone digits + customer name "street Vancouver BC"
+        // License should be 5 first character of name + last four digits o phone + 0.
+        // Password should be igual name hash code
+        String[] customerName = {"Alexandre", "Andre", "David", "William", "Eduardo", "Priscila", "Carla"};
+        String[] customerPhone = {"604-440-4567","778-837-3317","778-751-5678","778-751-9854","778-837-3456","778-837-7831"};
+        String UID;
 
+        User myUser = new User();
+        MainUser myMainUser = new MainUser();
 
-        String []customerName={
-                "Ralph Weatherhogg",
-                "Consuelo Albone",
-                "Hamel Ronald",
-                "Elvis Fudge",
-                "Amalee Peffer",
-                "Cheslie Bedwell",
-                "Esmeralda Mabbot",
-                "Sonja Bew",
-                "Job Frissell",
-                "Mahmud Mackie"
-        };
+        //create 3 new managers 0 , 1 and 2
+        for (int ind = 0; ind < 3; ind++){
+            UID = "";
+            for (int i=0 ; i < (int)(Math.random()*5) + 5; i++)
+                UID += (char)((Math.random()*26) + 'A');
 
-        String [] email={
-                "brushbury0@eventbrite.com",
-                "khorsey1@dion.ne.jp",
-                "bblackshaw2@aol.com",
-                "tcaccavari3@ihg.com",
-                "mduddridge4@senate.gov",
-                "ksnyder5@squidoo.com",
-                "emactrustam6@si.edu",
-                "rfogg7@livejournal.com",
-                "dstorrock8@ebay.co.uk",
-                "spuddefoot9@icio.us"
-
-        };
-
-        String [] gender={
-                "Male",
-                "Female",
-                "Female",
-                "Female",
-                "Female",
-                "Male",
-                "Female",
-                "Male",
-                "Male",
-                "Male"
-
-        };
-
-
-        String [] phone={
-                "392-122-2738",
-                "786-903-8068",
-                "433-426-3397",
-                "100-988-9758",
-                "629-298-9042",
-                "621-790-7407",
-                "823-343-1119",
-                "431-926-1785",
-                "654-775-8450",
-                "178-480-9752"
-        };
-
-
-
-        // Map<String,User> data;
-        for (int i=0 ; i < email.length;i++) {
-            // data = new HashMap<>();
-            User n= new User();
-            n.setCustomerName(customerName[i]);
-            n.setEmail(email[i]);
-            n.setPhone(phone[i]);
-
-
-            //data.put("Car_Customer", n);
-
-            car_customer.document(email[i]).set(n);
-
-
-
+            myUser.setId(UID);
+            myUser.setCustomerName(customerName[ind]);
+            myUser.setEmail(customerName[ind] + "@gmail.com");
+            myUser.setPhone(customerPhone[ind]);
+            myUser.setAddress(customerPhone[ind].substring(9) + " " + customerName[ind] + " street, Vancouver BC");
+            myUser.setDriverLicense(customerName[ind].substring(0,5)+customerPhone[ind].substring(8)+"0");
+            try{
+                myUser.setPwd(myMainUser.getMd5(customerName[ind]));
+            } catch (NoSuchAlgorithmException e) {
+                throw new RuntimeException(e);
+            }
+            myUser.setType("manager");
+            //add usee to database
+            myMainUser.AddData(myUser);
         }
 
-    }
+        //create 3 new salesmen 3 , 4 and 5
+        for (int ind = 3; ind < 6; ind++){
+            UID = "";
+            for (int i=0 ; i < (int)(Math.random()*5) + 5; i++)
+                UID += (char)((Math.random()*26) + 'A');
 
+            myUser.setId(UID);
+            myUser.setCustomerName(customerName[ind]);
+            myUser.setEmail(customerName[ind] + "@gmail.com");
+            myUser.setPhone(customerPhone[ind]);
+            myUser.setAddress(customerPhone[ind].substring(9) + " " + customerName[ind] + " street, Vancouver BC");
+            myUser.setDriverLicense(customerName[ind].substring(0,5)+customerPhone[ind].substring(8)+"0");
+            try{
+                myUser.setPwd(myMainUser.getMd5(customerName[ind]));
+            } catch (NoSuchAlgorithmException e) {
+                throw new RuntimeException(e);
+            }
+            myUser.setType("manager");
+            //add usee to database
+            myMainUser.AddData(myUser);
+        }
+    }
 }

@@ -26,7 +26,7 @@ import ca.douglas.rentalcar.entity.User;
 import ca.douglas.rentalcar.sales.MainSales;
 import ca.douglas.rentalcar.user.MainUser;
 
-public class SignUp extends AppCompatActivity {
+public class UpdateUser extends AppCompatActivity {
 
     private String UID, customerName, customerEmail, customerPhone, getCustomerAccess = "client";
     private String customerAddress, customerLicense, customerPwd, customerConfPwd;
@@ -35,21 +35,21 @@ public class SignUp extends AppCompatActivity {
 
     private FirebaseFirestore db;
     private final String COLLECTION_NAME = "Users";
-    private final String TAG = "SignUp" ;
+    private final String TAG = "UpdateUser" ;
     private final String []key = {"email","name","id","phone", "type","address","license","password"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_update_user);
 
-        final EditText cName = (EditText) findViewById(R.id.editSignUpName);
-        final EditText cEmail = (EditText) findViewById(R.id.editSignUpEmail);
-        final EditText cPhone = (EditText) findViewById(R.id.editSignUpPhone);
-        final EditText cAddress = (EditText) findViewById(R.id.editSignUpAddress);
-        final EditText cLicense = (EditText) findViewById(R.id.editSignUpLicense);
-        final EditText cPwd = (EditText) findViewById(R.id.editSignUpPassword);
-        final EditText cConfPwd = (EditText) findViewById(R.id.editSignUpConfPassword);
+        final EditText cName = (EditText) findViewById(R.id.editUpdName);
+        final EditText cEmail = (EditText) findViewById(R.id.editUpdEmail);
+        final EditText cPhone = (EditText) findViewById(R.id.editUpdPhone);
+        final EditText cAddress = (EditText) findViewById(R.id.editUpdAddress);
+        final EditText cLicense = (EditText) findViewById(R.id.editUpdLicense);
+        final EditText cPwd = (EditText) findViewById(R.id.editUpdPassword);
+        final EditText cConfPwd = (EditText) findViewById(R.id.editUpdConfPassword);
 
         initialize();
 
@@ -78,7 +78,7 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
-        Button b1 = (Button) findViewById(R.id.btnSignUp);
+        Button b1 = (Button) findViewById(R.id.btnUpd);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,63 +93,55 @@ public class SignUp extends AppCompatActivity {
                 customerConfPwd = cConfPwd.getText().toString();
 
                 if (customerName.length() == 0)
-                    Toast.makeText(SignUp.this, "Please, enter your name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateUser.this, "Please, enter your name", Toast.LENGTH_SHORT).show();
                 else if (customerEmail.length() == 0)
-                    Toast.makeText(SignUp.this, "Please, enter your email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateUser.this, "Please, enter your email", Toast.LENGTH_SHORT).show();
                 else if (customerPhone.length() == 0)
-                    Toast.makeText(SignUp.this, "Please, enter your phone number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateUser.this, "Please, enter your phone number", Toast.LENGTH_SHORT).show();
                 else if (customerAddress.length() == 0)
-                    Toast.makeText(SignUp.this, "Please, enter your address", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateUser.this, "Please, enter your address", Toast.LENGTH_SHORT).show();
                 else if (customerLicense.length() == 0)
-                    Toast.makeText(SignUp.this, "Please, enter your driver license", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateUser.this, "Please, enter your driver license", Toast.LENGTH_SHORT).show();
                 else if (customerPwd.length() == 0)
-                    Toast.makeText(SignUp.this, "Please, enter your password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateUser.this, "Please, enter your password", Toast.LENGTH_SHORT).show();
                 else if (customerConfPwd.length() == 0)
-                    Toast.makeText(SignUp.this, "Please, confirm your password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateUser.this, "Please, confirm your password", Toast.LENGTH_SHORT).show();
                 else if (customerPwd.toString().compareTo(customerConfPwd.toString())!=0)
-                    Toast.makeText(SignUp.this, "Please, password does not match confirmation" +
+                    Toast.makeText(UpdateUser.this, "Please, password does not match confirmation" +
                             customerPwd.toString() + " " + customerConfPwd.toString(), Toast.LENGTH_SHORT).show();
                 else {
 
                     myUser = new User();
                     myMainUser = new MainUser();
 
-                    //Verify if email already exists
-                    myMainUser.Search(customerEmail);
-                    if (myUser.getCustomerName() == null){
+                    //create new user
+                    UID = "";
+                    for (int i=0 ; i < (int)(Math.random()*5) + 5; i++)
+                        UID += (char)((Math.random()*26) + 'A');
 
-                        //create new user
-                        UID = "";
-                        for (int i=0 ; i < (int)(Math.random()*5) + 5; i++)
-                            UID += (char)((Math.random()*26) + 'A');
+                    myUser.setId(UID);
+                    myUser.setCustomerName(customerName);
+                    myUser.setEmail(customerEmail);
+                    myUser.setPhone(customerPhone);
+                    myUser.setAddress(customerAddress);
+                    myUser.setDriverLicense(customerLicense);
+                    myUser.setPwd(customerPwd);
+                    myUser.setType(getCustomerAccess);
 
-                        myUser.setId(UID);
-                        myUser.setCustomerName(customerName);
-                        myUser.setEmail(customerEmail);
-                        myUser.setPhone(customerPhone);
-                        myUser.setAddress(customerAddress);
-                        myUser.setDriverLicense(customerLicense);
-                        myUser.setPwd(customerPwd);
-                        myUser.setType(getCustomerAccess);
+                    //update usee to database
+                    myMainUser.Update(myUser);
 
-                        //add usee to database
-                        myMainUser.AddData(myUser);
+                    Toast.makeText(UpdateUser.this, "Data Updated. Welcome to Rental Car, " + myUser.getCustomerName() +
+                            "!", Toast.LENGTH_LONG).show();
 
-                        Toast.makeText(SignUp.this, "Welcome to Rental Car, " + myUser.getCustomerName() +
-                                "!", Toast.LENGTH_LONG).show();
+                    //open Customer Activity
+                    Intent i;
+                    i = new Intent(UpdateUser.this, MainSales.class);
+                    startActivity(i);
 
-                        //open Customer Activity
-                        Intent i;
-                        i = new Intent(SignUp.this, MainSales.class);
-                        startActivity(i);
-
-                    } else {
-                        Toast.makeText(SignUp.this, "Customer already registered. Try Login!", Toast.LENGTH_LONG).show();
-                    }
                 }
             }
         });
-
     }
 
     // ==================
@@ -166,6 +158,4 @@ public class SignUp extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
     }
-
 }
-

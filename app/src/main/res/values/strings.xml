@@ -76,9 +76,18 @@
     <string name="txtSignUpPassword">Password:</string>
     <string name="btnSignUp">Sign Up</string>
     <string name="txtSignUpConfPwd">Confirm:</string>
+
+    <string name="txtUpdUserid">Username:</string>
+    <string name="txtUpdName">Name:</string>
+    <string name="txtUpdTitle2">Sign Up</string>
+    <string name="txtUpdEmail">Email:</string>
+    <string name="txtUpdPhone">Phone:</string>
+    <string name="txtUpdAddress">Address:</string>
+    <string name="txtUpdLicense">License:</string>
+    <string name="txtUpdPassword">Password:</string>
+    <string name="txtUpdConfPwd">Confirm:</string>
     <string name="btnUpdate">Update Data</string>
     <string name="btnLogIn">Log In</string>
-
 
     <string-array name="status_array">
         <item>Waiting Arrival</item>

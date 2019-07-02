@@ -43,12 +43,11 @@ import ca.douglas.rentalcar.user.MainUser;
 public class LogIn extends AppCompatActivity {
 
     private FirebaseFirestore db;
-    private final String COLLECTION_NAME = "myTestAlexandre01";
+    private final String COLLECTION_NAME = "Users";
     private final String TAG = "LogIn" ;
-    private final String []key = {"id","name","email","phone", "type","address","license","password"};
+    private final String []key = {"email","name","id","phone", "type","address","license","password"};
 
-    private String UID, customerName, customerEmail, customerPhone, getCustomerAccess;
-    private String customerAddress, customerLicense, customerPwd, customerConfPwd;
+    private String customerEmail, customerPwd;
     private User myUser;
     private MainUser myMainUser;
 
@@ -87,8 +86,29 @@ public class LogIn extends AppCompatActivity {
             }
         });
 
-        Button b1 = (Button) findViewById(R.id.btnLogIn);
+        Button b1 = (Button) findViewById(R.id.btnUpdate);
         b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //get user data
+                customerEmail = cEmail.getText().toString();
+                customerPwd = cPwd.getText().toString();
+
+                if (customerEmail.length() == 0)
+                    Toast.makeText(LogIn.this, "Please, enter your email", Toast.LENGTH_SHORT).show();
+                else if (customerPwd.length() == 0)
+                    Toast.makeText(LogIn.this, "Please, enter your password", Toast.LENGTH_SHORT).show();
+                else {
+                    Intent i;
+                    i = new Intent(LogIn.this, UpdateUser.class);
+                    startActivity(i);
+                }
+            }
+        });
+
+        Button b2 = (Button) findViewById(R.id.btnLogIn);
+        b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -110,9 +130,10 @@ public class LogIn extends AppCompatActivity {
                         throw new RuntimeException(e);
                     }
 
-
                     //Verify if email already exists
-                    myUser = myMainUser.Search(customerEmail);
+                    myMainUser.Search(customerEmail);
+
+                    myUser = myMainUser.myUser;
 
                     if (myUser.getCustomerName() != null){
 

@@ -2,13 +2,17 @@ package ca.douglas.rentalcar.user;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.Query;
@@ -21,15 +25,19 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
+import ca.douglas.rentalcar.DB.MyDBConnection;
 import ca.douglas.rentalcar.entity.User;
+
+import static java.nio.file.Paths.get;
 
 public class MainUser {
 
     private FirebaseFirestore db;
-    private final String COLLECTION_NAME = "myTestAlexandre01";
-    private final String TAG = "SignUp" ;
-    private final String []key = {"id","name","email","phone", "type","address","license","password"};
-    User myUser;
+    private final String COLLECTION_NAME = "Users";
+    private final String TAG = "MainUser" ;
+    private final String []key = {"email","name","id","phone", "type","address","license","password"};
+    public User myUser;
+    private MyDBConnection dbc;
 
     public MainUser(){
         initialize();
@@ -76,56 +84,54 @@ public class MainUser {
 
         try{
 
+            dbc = new MyDBConnection();
             Map<String, Object> user = new HashMap<>();
 
-            user.put(key[0], myUser.getId());
+            user.put(key[0], myUser.getEmail().toLowerCase()); //it saves email as lower case string
             user.put(key[1], myUser.getCustomerName());
-            user.put(key[2], myUser.getEmail().toLowerCase()); //it saves email as lower case string
+            user.put(key[2], myUser.getId());
             user.put(key[3], myUser.getPhone());
             user.put(key[4], myUser.getType());
             user.put(key[5], myUser.getAddress());
             user.put(key[6], myUser.getDriverLicense());
             user.put(key[7], getMd5(myUser.getPwd()));
 
-            // Add a new document with a generated ID
-            db.collection(COLLECTION_NAME)
-                    .add(user)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Log.d(TAG,
-                                    "DocumentSnapshot added with ID: " + documentReference.getId());
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(Exception e) {
-                            Log.d(TAG,
-                                    "Error adding document " + e);
-                        }});
+            CollectionReference users = dbc.getCollectionReference("Users");
+            users.document(myUser.getEmail().toLowerCase()).set(user);
+
         }  catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
+
     }
 
-    public User Search(String email) {
+    //public User Search(String email) {
+    public void Search(String email) {
 
         // Create a reference
         CollectionReference ref = db.collection(COLLECTION_NAME);
         myUser = new User();
 
+        //CollectionReference users = dbc.getCollectionReference("Users");
+        //String myEmail = users.document(email).getId();
+        //if (myEmail.length() != 0){
+        //} else {
+        //}
+
         // Create a query against the collection.
         Query query = ref.whereEqualTo(key[2], email.toLowerCase().trim());
+
         query.get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
 
-                                myUser.setId(document.getData().get(key[0]).toString());
+                                myUser.setEmail(document.getData().get(key[0]).toString());
                                 myUser.setCustomerName(document.getData().get(key[1]).toString());
-                                myUser.setEmail(document.getData().get(key[2]).toString());
+                                myUser.setId(document.getData().get(key[2]).toString());
                                 myUser.setPhone(document.getData().get(key[3]).toString());
                                 myUser.setType(document.getData().get(key[4]).toString());
                                 myUser.setAddress(document.getData().get(key[5]).toString());
@@ -133,16 +139,18 @@ public class MainUser {
                                 myUser.setPwd(document.getData().get(key[7]).toString());
 
                                 Log.d(TAG, document.getId() + " => " + document.getData());
+
                             }
 
                         } else {
-                            myUser = null;
+
                             Log.w(TAG, "Error getting documents.", task.getException());
                         }
                     }
                 });
 
-        return myUser;
+        //return myUser;
+
     }
 
     public void Update(User myUser) {
@@ -151,9 +159,9 @@ public class MainUser {
 
             Map<String, Object> user = new HashMap<>();
 
-            user.put(key[0], myUser.getId());
+            user.put(key[0], myUser.getEmail());
             user.put(key[1], myUser.getCustomerName());
-            user.put(key[2], myUser.getEmail());
+            user.put(key[2], myUser.getId());
             user.put(key[3], myUser.getPhone());
             user.put(key[4], myUser.getType());
             user.put(key[5], myUser.getAddress());
@@ -164,7 +172,7 @@ public class MainUser {
                 throw new RuntimeException(e);
             }
 
-            db.collection(COLLECTION_NAME).document(myUser.getId()).update(user);
+            db.collection(COLLECTION_NAME).document(myUser.getEmail()).update(user);
 
         }
     }
