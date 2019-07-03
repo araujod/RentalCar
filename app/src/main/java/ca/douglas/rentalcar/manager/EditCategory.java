@@ -64,7 +64,7 @@ public class EditCategory extends AppCompatActivity {
         db.setFirestoreSettings(settings);
 
 
-        // Display the date from the category selected in the previous activity
+        // Display the data from the category selected in the previous activity
         db.collection(COLLECTION_NAME)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -164,7 +164,7 @@ public class EditCategory extends AppCompatActivity {
             db.collection(COLLECTION_NAME).document(CID_).delete();
 
             Toast.makeText(EditCategory.this,
-                    "Category Edited Successfully", Toast.LENGTH_LONG).show();
+                    "Category Delete Successfully", Toast.LENGTH_LONG).show();
 
             new Timer().schedule(new TimerTask() {
                 @Override

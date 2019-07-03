@@ -78,8 +78,6 @@ public class CategoryOption extends AppCompatActivity {
 
                  selected_val = catSpninner.getSelectedItem().toString();
 
-                Toast.makeText(getApplicationContext(), selected_val,
-                        Toast.LENGTH_SHORT).show();
             }
 
             @Override

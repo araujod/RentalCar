@@ -89,6 +89,10 @@
     <string name="btnUpdate">Update Data</string>
     <string name="btnLogIn">Log In</string>
     <string name="txtLicensePlate">License Plate</string>
+    <string name="txtEditCar">Edit Car</string>
+    <string name="btnEditCar">Update</string>
+    <string name="btnDeleteCar">Delete</string>
+    <string name="txtTotalDays">Total Days</string>
 
     <string-array name="status_array">
         <item>Waiting Arrival</item>

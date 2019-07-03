@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Car implements Serializable {
     private String id;
-    private String categ_ID;
+    private String categ_Name;
     private String model;
     private String maker;
     private String year;
@@ -24,12 +24,12 @@ public class Car implements Serializable {
         this.id = id;
     }
 
-    public String getCateg_ID() {
-        return categ_ID;
+    public String getCateg_Name() {
+        return categ_Name;
     }
 
-    public void setCateg_ID(String categ_ID) {
-        this.categ_ID = categ_ID;
+    public void setCateg_Name(String categ_Name) {
+        this.categ_Name = categ_Name;
     }
 
     public String getModel() {

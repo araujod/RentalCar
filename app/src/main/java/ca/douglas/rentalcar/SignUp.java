@@ -121,7 +121,7 @@ public class SignUp extends AppCompatActivity {
 
                     //Verify if email already exists
 
-                    myMainUser.Search(customerEmail);
+                    //myMainUser.SearchUser(customerEmail);
 
                     //myUser = myMainUser.Search(customerEmail);
 

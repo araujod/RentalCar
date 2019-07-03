@@ -36,6 +36,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 import ca.douglas.rentalcar.entity.User;
+import ca.douglas.rentalcar.manager.AddNewCar;
 import ca.douglas.rentalcar.manager.MainManager;
 import ca.douglas.rentalcar.sales.MainSales;
 import ca.douglas.rentalcar.user.MainUser;
@@ -46,10 +47,13 @@ public class LogIn extends AppCompatActivity {
     private final String COLLECTION_NAME = "Users";
     private final String TAG = "LogIn" ;
     private final String []key = {"email","name","id","phone", "type","address","license","password"};
+    private String type, UserName;
 
     private String customerEmail, customerPwd;
-    private User myUser;
-    private MainUser myMainUser;
+    User myUser;
+    MainUser myMainUser;
+    boolean checkEmail =false;
+    boolean checkPwd =false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,32 +63,7 @@ public class LogIn extends AppCompatActivity {
         final EditText cEmail = (EditText) findViewById(R.id.editLogInEmail);
         final EditText cPwd = (EditText) findViewById(R.id.editLogInPassword);
 
-        initialize();
 
-        // Listening to changes
-        final CollectionReference docRef = db.collection(COLLECTION_NAME);
-        docRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot snapshot, @Nullable FirebaseFirestoreException e) {
-                if (e != null) {
-                    Log.w(TAG, "Listen failed.", e);
-                    return;
-                }
-
-                if (snapshot != null && !snapshot.isEmpty()) {
-                    List<DocumentChange> data = snapshot.getDocumentChanges();
-                    Map<String, Object> user;
-                    for (DocumentChange dc : data) {
-                        user =dc.getDocument().getData();
-                        Log.d(TAG, "Current data: ");
-                        Log.d(TAG,user.get(key[0]) + ", " + user.get(key[1]) + ", " + user.get(key[2]));
-                    }
-
-                } else {
-                    Log.d(TAG, "Current data: null");
-                }
-            }
-        });
 
         Button b1 = (Button) findViewById(R.id.btnUpdate);
 
@@ -92,6 +71,7 @@ public class LogIn extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                initialize();
 
                 //get user data
                 customerEmail = cEmail.getText().toString();
@@ -125,6 +105,7 @@ public class LogIn extends AppCompatActivity {
                 else {
 
                     myUser = new User();
+
                     myMainUser = new MainUser();
                     try{
                         customerPwd = myMainUser.getMd5(customerPwd);
@@ -132,23 +113,57 @@ public class LogIn extends AppCompatActivity {
                         throw new RuntimeException(e);
                     }
 
+
+
                     //Verify if email already exists
+                    initialize();
+                    db.collection(COLLECTION_NAME)
+                            .get()
+                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
 
-                    myMainUser.Search(customerEmail);
+                                @Override
+                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                    if (task.isSuccessful()) {
+                                        for (QueryDocumentSnapshot document : task.getResult()) {
 
-                    myUser = myMainUser.myUser;
+                                            if(document.getData().get("email").toString().equals(customerEmail)){
+                                                myUser.setEmail(document.getData().get(key[0]).toString());
+                                                myUser.setCustomerName(document.getData().get(key[1]).toString());
+                                                myUser.setId(document.getData().get(key[2]).toString());
+                                                myUser.setPhone(document.getData().get(key[3]).toString());
+                                                myUser.setType(document.getData().get(key[4]).toString());
+                                                myUser.setAddress(document.getData().get(key[5]).toString());
+                                                myUser.setDriverLicense(document.getData().get(key[6]).toString());
+                                                myUser.setPwd(document.getData().get(key[7]).toString());
+
+                                                type = myUser.getType();
+                                                UserName = myUser.getCustomerName();
+
+                                                checkEmail = true;
+
+                                                if(myUser.getPwd().equals(customerPwd)){
+                                                    checkPwd = true;
+                                                }
+
+                                            }
+                                        }
+
+                                    } else {
+                                        Log.w(TAG, "Error getting documents.", task.getException());
+                                    }
+                                }
+                            });
 
 
-                    //myUser = myMainUser.Search(customerEmail);
 
 
-                    if (myUser.getCustomerName() != null){
+                    if (checkEmail){
 
-                        if (myUser.getPwd().compareTo(customerPwd) == 0){
+                        if (checkPwd){
 
-                            Toast.makeText(LogIn.this, "Welcome to Rental Car " + myUser.getCustomerName(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(LogIn.this, "Welcome to Rental Car " + UserName, Toast.LENGTH_LONG).show();
                             Intent i;
-                            switch (myUser.getType()){
+                            switch (type){
                                 case "client":
                                     //open Customer Activity
                                     i = new Intent(LogIn.this, MainSales.class);
@@ -190,6 +205,10 @@ public class LogIn extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
     }
+
+
+
+
 
 }
 

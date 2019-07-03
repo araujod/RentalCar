@@ -154,6 +154,68 @@ public class MainUser {
 
     }
 
+    public void SearchUser(final String emailInput){
+        myUser = new User();
+        String email,customerName,ID,phone,type,address,driverLicense,pwd;
+
+        // Display the data from the category selected in the previous activity
+        db.collection(COLLECTION_NAME)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+
+                                if(document.getData().get("email").toString().equals(emailInput)){
+                                    myUser.setEmail(document.getData().get(key[0]).toString());
+                                    myUser.setCustomerName(document.getData().get(key[1]).toString());
+                                    myUser.setId(document.getData().get(key[2]).toString());
+                                    myUser.setPhone(document.getData().get(key[3]).toString());
+                                    myUser.setType(document.getData().get(key[4]).toString());
+                                    myUser.setAddress(document.getData().get(key[5]).toString());
+                                    myUser.setDriverLicense(document.getData().get(key[6]).toString());
+                                    myUser.setPwd(document.getData().get(key[7]).toString());
+                                }
+                            }
+
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                }); // Display the data from the category selected in the previous activity
+        db.collection(COLLECTION_NAME)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+
+                                if(document.getData().get("email").toString().equals(emailInput)){
+                                    myUser.setEmail(document.getData().get(key[0]).toString());
+                                    myUser.setCustomerName(document.getData().get(key[1]).toString());
+                                    myUser.setId(document.getData().get(key[2]).toString());
+                                    myUser.setPhone(document.getData().get(key[3]).toString());
+                                    myUser.setType(document.getData().get(key[4]).toString());
+                                    myUser.setAddress(document.getData().get(key[5]).toString());
+                                    myUser.setDriverLicense(document.getData().get(key[6]).toString());
+                                    myUser.setPwd(document.getData().get(key[7]).toString());
+                                }
+                            }
+
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+
+    }
+
+
+
     public void Update(User myUser) {
 
         if (myUser != null) {

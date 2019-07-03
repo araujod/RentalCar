@@ -60,36 +60,33 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/btnEditCat"
+        android:id="@+id/btnEditCar"
         android:layout_width="128dp"
         android:layout_height="72dp"
         android:layout_marginStart="141dp"
         android:layout_marginLeft="141dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="142dp"
         android:layout_marginRight="142dp"
-        android:theme="@style/AppTheme.Button"
         android:text="@string/btnEdit"
+        android:theme="@style/AppTheme.Button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+        app:layout_constraintTop_toBottomOf="@+id/listInventoryCar" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="420dp"
-        android:layout_height="310dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
+    <ListView
+        android:id="@+id/listInventoryCar"
+        android:layout_width="407dp"
+        android:layout_height="295dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginRight="3dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view">
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
 </android.support.constraint.ConstraintLayout>

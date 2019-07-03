@@ -85,11 +85,8 @@
         android:layout_marginStart="78dp"
         android:layout_marginLeft="78dp"
         android:layout_marginTop="21dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginRight="33dp"
         android:text="@string/txtEmail"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/txtEmail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
@@ -146,6 +143,7 @@
         android:layout_width="162dp"
         android:layout_height="25dp"
         android:layout_marginTop="31dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toStartOf="parent"
@@ -156,6 +154,7 @@
         android:layout_width="162dp"
         android:layout_height="25dp"
         android:layout_marginTop="26dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toStartOf="parent"
@@ -166,6 +165,7 @@
         android:layout_width="162dp"
         android:layout_height="25dp"
         android:layout_marginTop="27dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toStartOf="parent"
@@ -173,12 +173,16 @@
 
     <TextView
         android:id="@+id/txtEmail"
-        android:layout_width="162dp"
+        android:layout_width="236dp"
         android:layout_height="25dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
         app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
     <TextView
@@ -186,32 +190,25 @@
         android:layout_width="162dp"
         android:layout_height="25dp"
         android:layout_marginTop="32dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCreateNewUser" />
 
     <Button
-        android:id="@+id/btnUpdateInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/btnUpdateInformation"
-        android:theme="@style/AppTheme.Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDriverLicense" />
-
-    <Button
         android:id="@+id/btnContinue3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="139dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="131dp"
+        android:layout_marginLeft="131dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginRight="192dp"
         android:text="@string/btncontinue"
         android:theme="@style/AppTheme.Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.752"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDriverLicense" />
 
