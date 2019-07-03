@@ -103,7 +103,7 @@ public class DriverInfo extends AppCompatActivity {
                         });
 
                 if(driverName.getText().toString().equals("")){
-                    Toast.makeText(DriverInfo.this, "Customer Not Found!", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(DriverInfo.this, "Customer Not Found!", Toast.LENGTH_SHORT).show();
 
                 }
             }

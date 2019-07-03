@@ -117,6 +117,7 @@ public class LogIn extends AppCompatActivity {
 
                     //Verify if email already exists
                     initialize();
+
                     db.collection(COLLECTION_NAME)
                             .get()
                             .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -184,7 +185,7 @@ public class LogIn extends AppCompatActivity {
                             Toast.makeText(LogIn.this, "Wrong password. Please try again!", Toast.LENGTH_LONG).show();
                         }
                     } else {
-                        Toast.makeText(LogIn.this, "Customer not found. Try Register!", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(LogIn.this, "Customer not found. Try Register!", Toast.LENGTH_LONG).show();
                     }
                 }
             }

@@ -157,8 +157,13 @@ public class SummaryRent extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 if(document.getData().get("name").toString().equals(getCat)) {
-                                    price.setText(document.getData().get("priceDay").toString());
+
                                     pricePerDay = document.getData().get("priceDay").toString();
+                                    Double perDay = Double.parseDouble(pricePerDay);
+                                    perDay = perDay * days;
+                                    price.setText(perDay.toString());
+                                    perDay += 300;
+                                    txtTotal.setText(perDay.toString());
                                 }
 
                             }
@@ -170,9 +175,11 @@ public class SummaryRent extends AppCompatActivity {
                 });
 
 
-                price.setText(pricePerDay);
+                //price.setText("");
 
-                txtTotal.setText("XXXXXXX");
+
+
+                //txtTotal.setText("");
 
 
 
